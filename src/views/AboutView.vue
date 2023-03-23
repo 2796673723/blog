@@ -89,8 +89,8 @@ const uploadHtml = async () => {
   const id = infoState.id;
   const user = "luoluo";
   const info = valueHtml.value;
-  if (id) await updateInfo(id, user, info);
-  else await addInfo(user, info);
+  if (id) await updateInfo(id, user, info, infoState.token);
+  else await addInfo(user, info, infoState.token);
   alert("编辑成功");
   cancelEdit();
 };

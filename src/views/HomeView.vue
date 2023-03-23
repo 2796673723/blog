@@ -16,6 +16,10 @@
       >
         删除
       </button>
+      <div style="float: right; display: flex">
+        <input v-model="token" class="input" style="margin-right: 1rem" />
+        <button class="btn" @click="setToken">确定</button>
+      </div>
     </div>
     <div class="items">
       <div
@@ -38,6 +42,7 @@ import { useInfoStore } from "@/stores/info";
 const infoState = useInfoStore();
 const router = useRouter();
 const infoList = ref([]);
+const token = ref("");
 
 onMounted(async () => {
   await initList();
@@ -65,9 +70,11 @@ const setBtn = (type) => `btn-${type}${!selectedItem.value ? "-disabled" : ""}`;
 const isSelectedItem = (id) => (id === selectedItem.value ? "item-select" : "");
 
 const deleteItem = async () => {
-  await deleteInfo(+selectedItem.value);
+  await deleteInfo(+selectedItem.value, infoState.token);
   await initList();
 };
+
+const setToken = () => (infoState.token = token.value);
 </script>
 
 <style scoped>
