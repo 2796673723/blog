@@ -17,7 +17,7 @@
         删除
       </button>
       <div style="float: right; display: flex">
-        <input v-model="token" class="input" style="margin-right: 1rem" />
+        <input v-model="token" class="input" style="margin-right: 1rem" type="password"/>
         <button class="btn" @click="setToken">确定</button>
       </div>
     </div>
