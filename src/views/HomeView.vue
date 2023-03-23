@@ -74,7 +74,10 @@ const deleteItem = async () => {
   await initList();
 };
 
-const setToken = () => (infoState.token = token.value);
+const setToken = () => {
+  infoState.token = token.value;
+  token.value = "";
+};
 </script>
 
 <style scoped>
