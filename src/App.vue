@@ -56,6 +56,7 @@ body {
 }
 
 .btn-danger-disabled {
+  cursor: not-allowed;
   color: #f9a7a7;
   background-color: #fef0f0;
   border-color: #fde2e2;
